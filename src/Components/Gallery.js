@@ -4,15 +4,15 @@ import Photo from './Photo.js'
 const Gallery = ({photos, loading, noMatch}) => {
     return (
         <div className="photo-container">
-            <h2>
+            <h6>
                 { 
                     loading
                         ? 'Loading...'
                         : noMatch
                             ? 'No Match !'
-                            : <h6>Your searched results...</h6>
+                            : 'Your searched results...'
                 }
-            </h2>
+            </h6>
             <ul>
                 {
                     photos.map( (url, kiyana) => <Photo src={url} key={kiyana}/> )
