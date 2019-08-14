@@ -15,8 +15,8 @@ class Container extends Component {
         this.apiKey = apiKey;
     }
 
-    queryFlickr() {
-             fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${this.apiKey}&tags=${this.keyWord}&per_page=${this.PerPage}&format=json&nojsoncallback=1`)
+    queryFlicker() {
+         fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${this.apiKey}&tags=${this.keyWord}&per_page=${this.PerPage}&format=json&nojsoncallback=1`)
             .then( res => res.json() )
             .then( data => data.photos.photo )
             .then( data => data.map( infos =>
@@ -32,14 +32,13 @@ class Container extends Component {
     }
 
     componentDidMount() {
-        // query Flickr if there's a query string
         if ( this.keyWord ) {
-            this.queryFlickr();
+            this.queryFlicker();
         }
     }
 
     render() {
-        // render the gallery if there's a query string
+
         if ( this.keyWord ) {
             return  <Gallery
                 photos={this.state.photosURL}

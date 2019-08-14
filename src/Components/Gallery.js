@@ -9,8 +9,8 @@ const Gallery = ({photos, loading, noMatch}) => {
                     loading
                         ? 'Loading...'
                         : noMatch
-                            ? 'Nope Sis !'
-                            : 'Your searched results...'
+                            ? 'No Match !'
+                            : <h6>Your searched results...</h6>
                 }
             </h2>
             <ul>

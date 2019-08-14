@@ -6,13 +6,11 @@ import Container from './Components/Container.js';
 import Error from './Error.js';
 
 class App extends Component {
-
-    // the keyCounter variable ensures the route is re-rendered everytime, even if the route is the same
     constructor() {
         super();
         this.keyCounter = 0;
     }
-    // passes a key, the word to query and the API key
+
     routeHandler = ({match}) =>
         <Container
             key={this.keyCounter++}
@@ -37,7 +35,7 @@ class App extends Component {
                 
                         <Route
                             exact path='/'
-                            render={ () => <Redirect to='/presets/new york interior design' /> } />
+                            render={ () => <Redirect to='/presets/" famous" "architecture"' /> } />
                     <Error />
                     </Switch>
                 </div>
